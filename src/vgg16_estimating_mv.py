@@ -182,4 +182,6 @@ print("..: Save the model")
 path_models = "/path-to-models-dir/"
 model.save(path_models + f"model_id_{TEST_DATA_ID}.h5")
 
+print("..: Evaluation of the trained model on test dataset!")
+model.evaluate(data_test)
 print("..: Done ...")
