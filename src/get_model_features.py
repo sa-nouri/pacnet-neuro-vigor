@@ -4,6 +4,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 import tensorflow as tf
 from google.colab import drive
+from keras.preprocessing.image import array_to_img, img_to_array
 from tensorflow.keras.applications.vgg16 import VGG16, preprocess_input
 from tensorflow.keras.models import load_model
 
@@ -66,13 +67,27 @@ def apply_grad_cam(input_array):
 # Create an empty DataFrame to store the results
 result_df = pd.DataFrame(columns=['ID', 'pac_values', 'sm_pac_values'])
 
+print("..: Process the test data for evaluating VGG16 model!")
+split_df = pd.DataFrame(df_test.pac_values.tolist())
+split_df = (split_df-split_df.min())/(split_df.max() - split_df.min())
+
+df = pd.concat([df_test, split_df], axis=1)
+df_test.fillna(method='ffill', inplace=True)
+df_test.fillna(df.median, inplace=True)
+
 # Iterate through rows of test DataFrame
 for index, row in df_test.iterrows():
     print("The index of test dataset: ", index)
     input_array = row['pac_values']
     ID = row['ID']
+    # Apply preprocessing to the selected input
+    pacs_3d = np.dstack([input_array] * 3)
+    pacs_3d = pacs_3d.reshape(-1, 60, 30, 3)
+    pacs_3d_reshaped = np.asarray([img_to_array(array_to_img(im, scale=False).resize((64, 32))) for im in pacs_3d])
+    input_vgg16_test = preprocess_input(pacs_3d_reshaped)
+    
     # Apply Grad-CAM
-    output_array = apply_grad_cam(input_array)
+    output_array = apply_grad_cam(input_vgg16_test)
     # Append the results to the new DataFrame
     result_df = result_df.append({'ID': ID, 'pac_values': input_array, 'sm_pac_values': output_array}, ignore_index=True)
     print()
