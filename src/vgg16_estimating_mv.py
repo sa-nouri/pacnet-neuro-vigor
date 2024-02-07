@@ -169,7 +169,8 @@ model.compile(loss='mse', optimizer='adam', metrics=metrics_)
 
 print("..: Train the model and gets its history")
 history = model.fit(data,
-                    pt_vals,
+                    pt_vals
+                    batch_size=256,
                     validation_split=0.2,
                     epochs=40,
                     callbacks=[callback_],
