@@ -22,7 +22,7 @@ Keywords: Parkinson’s disease, Phase-amplitude coupling, Deep neural network, 
 ## Project Structure
 
 - **notebooks/**: Jupyter notebooks for exploration and analysis.
-- **src/**: Source code for data preprocessing, model training, and analysis.
+- **src/**: Source code for data preprocessing, model training, statistical analysis, and graphing
 
 ## Notebooks
 
