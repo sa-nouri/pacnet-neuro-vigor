@@ -41,7 +41,7 @@ Impaired motor vigor is a defining characteristic of Parkinson's disease (PD), y
 
 To use the tools and scripts provided in this repository, follow these general setup instructions:
 
-1. **Clone the Repository**: `git clone https://github.com/your-username/pacnet-neuro-vigor.git`
+1. **Clone the Repository**: `git clone git@github.com:sa-nouri/pacnet-neuro-vigor.git`
 
 2. **Environment Setup**:
    - Python: Ensure Python 3.11.7 is installed. Install required libraries using `pip install -r requirements.txt'.
