@@ -21,16 +21,16 @@ Impaired motor vigor is a defining characteristic of Parkinson's disease (PD), y
 
 ## Project Structure
 
-- **notebooks/**: Jupyter notebooks for exploration and analysis.
-- **src/**: Source code for data preprocessing, model training, statistical analysis, and graphing
+- [Notebooks](./notebooks/): Jupyter notebooks for exploration and analysis.
+- [SRC](./src/): Source code for data preprocessing, model training, statistical analysis, and graphing
 
-### [Notebooks](./notebooks/)
+### **Notebooks**
 
 - [`analyzing_pacs`](./notebooks/analyzing_pacs/): Explore and visualize the generated PAC data.
 - [`analyzing_saliency_maps`](./notebooks/analyzing_saliency_maps/): Explore and visualize the generated saliency maps data.
 - [`grad_camp`](./notebooks/grad_cam/): Apply an example of Grad-CAM as an explainable AI method.
 
-### [SRC](./src/)
+### **SRC**
 
 - [PACNET](./src/PACNET/): Implements the generation of raw PAC data and images, utilizes deep transfer learning based on VGG16 for estimating motor vigor from raw PAC data, and includes Grad-CAM implementation for feature visualization. Additionally, it performs correlation analysis for representational similarity among features and raw PACs.
 - [Headplots](./src/Headplots/): Visualizes headplots using MATLAB, facilitating the understanding of spatial EEG data distributions.
