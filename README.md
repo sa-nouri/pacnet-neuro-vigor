@@ -33,7 +33,7 @@ Impaired motor vigor is a defining characteristic of Parkinson's disease (PD), y
 ### **SRC**
 
 - [PACNET](./src/PACNET/): Implements the generation of raw PAC data and images, utilizes deep transfer learning based on VGG16 for estimating motor vigor from raw PAC data, and includes Grad-CAM implementation for feature visualization. Additionally, it performs correlation analysis for representational similarity among features and raw PACs.
-- [Headplots](./src/Headplots/): Visualizes headplots using MATLAB, facilitating the understanding of spatial EEG data distributions.
+- [Headplots](./src/Headplots/): Visualizes headplots using MATLAB
 - [Lasso](./src/Lasso/): Employs Lasso regression in MATLAB to estimate motor vigor from selected features and PAC data.
 - [Statistical Analysis](./src/Statistical%20Analysis/): Conducts statistical analysis in R, examining the relationships and effects within PAC data and saliency maps under various conditions.
 
@@ -50,7 +50,7 @@ To use the tools and scripts provided in this repository, follow these general s
 
 ## Usage
 
-For detailed usage instructions, including how to run each component of the project, please refer to the README.md files located within the src directory and its respective sub-directories.
+For detailed usage instructions, including how to run each component of the project, please refer to the [SRC README.md](./src/README.md) file.
 
 ## Contributing
 
